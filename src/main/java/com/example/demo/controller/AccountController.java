@@ -37,7 +37,7 @@ public class AccountController {
         log.info("Creating Customer data");
         log.info(customerDTO.getAccountType());
 
-        // Check if customerName is populated
+        
         CustomerCreationResponse customerResponse = customerService.generateCustomer(customerDTO);
         if (customerResponse.transactionStatusCode == 400)
             return ResponseEntity.status(400).body(customerResponse);
