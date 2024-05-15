@@ -22,7 +22,7 @@ import lombok.ToString;
 public class CustomerInquiryResponse {
 
 
-    public Long customerNumber;
+    public String customerNumber;
     public String customerName;
     public String customerMobile;
     public String customerEmail;

@@ -7,7 +7,7 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 @JsonSerialize(include = JsonSerialize.Inclusion.NON_NULL)
 public class CustomerCreationResponse {
-    public Long customerNumber;
+    public String customerNumber;
     public int transactionStatusCode;
     public String transactionStatusDescription;
 }

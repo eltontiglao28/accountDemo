@@ -22,7 +22,7 @@ public class CustomerInquiryServiceImpl implements CustomerInquiryService {
     private final FinancialTransactionRepository financialTransactionRepository;
 
     @Override
-    public CustomerInquiryResponse findByCustomerId(Long customerId) {
+    public CustomerInquiryResponse findByCustomerId(String customerId) {
 
         Optional<Customer> customer = customerRepository.findById(customerId);
         

@@ -10,5 +10,5 @@ public interface CustomerInquiryService {
      * @param customerId
      * @return Customer Inquiry Response
      */
-    CustomerInquiryResponse findByCustomerId(Long customerId);
+    CustomerInquiryResponse findByCustomerId(String customerId);
 }

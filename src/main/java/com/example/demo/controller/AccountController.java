@@ -45,7 +45,7 @@ public class AccountController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<CustomerInquiryResponse> getMethodName(@PathVariable Long id) {
+    public ResponseEntity<CustomerInquiryResponse> getMethodName(@PathVariable String id) {
         log.info("Finding Customer data given Customer ID");
         CustomerInquiryResponse customerInquiryResponse = customerInquiryService.findByCustomerId(id);
         if (customerInquiryResponse.transactionStatusCode == 401)

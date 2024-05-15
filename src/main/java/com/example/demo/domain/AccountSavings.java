@@ -14,7 +14,7 @@ import lombok.Value;
 @Getter
 @Setter
 public class AccountSavings {
-    Long accountNumber;
+    String accountNumber;
     AccountType accountType;
     BigDecimal availableBalance;
 }

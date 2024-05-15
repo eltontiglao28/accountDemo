@@ -10,6 +10,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+
+import org.hibernate.annotations.GenericGenerator;
+
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -25,9 +28,11 @@ import lombok.ToString;
 @AllArgsConstructor
 @EqualsAndHashCode
 public class Account {
-    @GeneratedValue
+    @GenericGenerator(name = "accountGenerator", strategy = "com.example.demo.CustomIdGenerator")
+    @GeneratedValue(generator = "accountGenerator")
     @Id
-    private Long accountNumber;
+    @Column(columnDefinition = "CHAR(8)")
+    private String accountNumber;
 
     @ManyToOne
     @JoinColumn(name = "CUSTOMER_ID", nullable = false)

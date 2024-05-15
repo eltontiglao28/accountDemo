@@ -4,6 +4,9 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+
+import org.hibernate.annotations.GenericGenerator;
+
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -19,9 +22,11 @@ import lombok.ToString;
 @AllArgsConstructor
 @EqualsAndHashCode
 public class Customer {
-    @GeneratedValue
+    @GenericGenerator(name = "customerGenerator", strategy = "com.example.demo.CustomIdGenerator")
+    @GeneratedValue(generator = "customerGenerator")
     @Id
-    private Long customerNumber;
+    @Column(columnDefinition = "CHAR(8)")
+    private String customerNumber;
     
     
     @Column(nullable = false)

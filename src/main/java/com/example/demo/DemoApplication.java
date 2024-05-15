@@ -23,20 +23,20 @@ public class DemoApplication {
 
 
 	// Test only scenarios where Accounts have Financial Transactions
-	// @Bean
-	// ApplicationRunner runner(AccountRepository accountRepository, CustomerRepository customerRepository,
-	// 		FinancialTransactionRepository financialTransactionRepository) {
-	// 	return args -> {
-	// 		Customer customer = customerRepository.save(new Customer("Elton", "12345", "aaaa@gmail.com", "12345", "6788 Street"));
-	// 		Account account = accountRepository.save(new Account(customer, AccountType.S));
-	// 		FinancialTransaction ft1 = financialTransactionRepository.save(
-	// 			new FinancialTransaction(account, new BigDecimal(100.00))
-	// 		);
+	@Bean
+	ApplicationRunner runner(AccountRepository accountRepository, CustomerRepository customerRepository,
+			FinancialTransactionRepository financialTransactionRepository) {
+		return args -> {
+			Customer customer = customerRepository.save(new Customer("Elton", "12345", "aaaa@gmail.com", "12345", "6788 Street"));
+			Account account = accountRepository.save(new Account(customer, AccountType.S));
+			FinancialTransaction ft1 = financialTransactionRepository.save(
+				new FinancialTransaction(account, new BigDecimal(100.00))
+			);
 
-	// 		FinancialTransaction ft2 = financialTransactionRepository.save(
-	// 			new FinancialTransaction(account, new BigDecimal(200.30))
-	// 		);
-	// 	};
-	// }
+			FinancialTransaction ft2 = financialTransactionRepository.save(
+				new FinancialTransaction(account, new BigDecimal(200.30))
+			);
+		};
+	}
 
 }
